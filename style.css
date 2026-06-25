@@ -1,0 +1,267 @@
+/* 🌐 عمومی سیٹنگ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 10px;
+  color: #333;
+}
+
+/* 🌐 زبان والا حصہ */
+.lang-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.lang-btn {
+  padding: 6px 16px;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  background: #fff;
+  color: #764ba2;
+}
+
+/* 🏠 ہیڈر */
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 🔍 سرچ باکس */
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#search-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #764ba2;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#search-btn {
+  padding: 12px 20px;
+  background: #764ba2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#search-btn:hover {
+  background: #5a3d8a;
+}
+
+/* 📊 نتائج */
+.results {
+  margin-bottom: 15px;
+}
+
+.result-card {
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #764ba2;
+}
+
+.result-card h3 {
+  color: #764ba2;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.result-card .medicines-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.medicine-tag {
+  background: #f0e6ff;
+  color: #764ba2;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* 🔘 بٹن */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.main-btn {
+  padding: 14px;
+  background: #fff;
+  color: #764ba2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background: #764ba2;
+  color: #fff;
+}
+
+/* 📋 زمرے */
+.categories {
+  margin-bottom: 15px;
+}
+
+.category-card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.category-card h3 {
+  color: #764ba2;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.category-card p {
+  color: #666;
+  font-size: 13px;
+}
+
+/* 💊 ادویات */
+.medicines {
+  margin-bottom: 15px;
+}
+
+.condition-card {
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.condition-card h4 {
+  color: #764ba2;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* ℹ️ ایپ کے بارے میں */
+.about {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.about h2 {
+  color: #764ba2;
+  margin-bottom: 10px;
+}
+
+.about p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ⚠️ وارننگ */
+.warning {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.warning p {
+  color: #856404;
+  font-size: 14px;
+}
+
+.doctor-warning {
+  background: #f8d7da;
+  border: 2px solid #dc3545;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.doctor-warning p {
+  color: #721c24;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 📱 موبائل کے لیے */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 20px;
+  }
+  
+  #search-input {
+    font-size: 14px;
+  }
+  
+  .main-btn {
+    font-size: 14px;
+  }
+}
