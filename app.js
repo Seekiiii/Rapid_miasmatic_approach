@@ -238,4 +238,13 @@ function refreshCurrentView() {
 // 🚀 ایپ شروع کریں
 window.onload = function() {
   setLang("ur");
-};
+};function showAbout() {
+  document.getElementById('homePage').style.display = 'none';
+  document.getElementById('aboutPage').style.display = 'block';
+}
+
+function showHome() {
+  document.getElementById('aboutPage').style.display = 'none';
+  document.getElementById('homePage').style.display = 'block';
+}
+
