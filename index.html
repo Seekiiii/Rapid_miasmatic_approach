@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ہومیوپیتھک میڈیسن فائنڈر</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+ <!-- 🌐 زبان والا حصہ -->
+  <div class="lang-bar">
+    <button onclick="setLang('ur')" class="lang-btn">اردو</button>
+    <button onclick="setLang('en')" class="lang-btn">English</button>
+    <button onclick="setLang('roman')" class="lang-btn">Roman</button>
+  </div>
+
+  <!-- 🏠 ہیڈر -->
+  <header class="header">
+    <h1 id="app-title">🏥 ہومیوپیتھک میڈیسن فائنڈر</h1>
+    <p id="app-subtitle">علامات لکھیں، دوا تلاش کریں</p>
+  </header>
+
+  <!-- 🔍 سرچ باکس -->
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="علامات لکھیں...">
+    <button onclick="searchMedicine()" id="search-btn">🔎 تلاش</button>
+  </div>
+
+  <!-- 📊 نتائج کا حصہ -->
+  <div id="search-results" class="results"></div>
+
+  <!-- 🔘 بٹن والا حصہ -->
+  <div class="buttons">
+    <button onclick="showAllMedicines()" class="main-btn">📋 تمام ادویات</button>
+    <button onclick="showCategories()" class="main-btn">❤️ زمرے</button>
+    <button onclick="showAbout()" class="main-btn">ℹ️ ایپ کے بارے میں</button>
+  </div>
+
+  <!-- 📋 زمرے والا حصہ -->
+  <div id="categories-section" class="categories"></div>
+
+  <!-- 💊 ادویات کی فہرست -->
+  <div id="medicines-section" class="medicines"></div>
+
+  <!-- ℹ️ ایپ کے بارے میں -->
+  <div id="about-section" class="about" style="display:none;">
+    <h2 id="about-title">ایپ کے بارے میں</h2>
+    <p id="about-text">یہ ایپ ہومیوپیتھک علاج کے لیے ہے۔ ڈاکٹر علی محمد کے لیکچرز پر مبنی ہے۔</p>
+    <div class="warning">
+      <p>⚠️ <span id="warning-text">یہ ایپ معلومات کے لیے ہے۔ دوائی استعمال کرنے سے پہلے ڈاکٹر سے ضرور مشورہ کریں۔</span></p>
+    </div>
+  </div>
+
+  <!-- ⚠️ ڈاکٹر وارننگ -->
+  <div class="doctor-warning">
+    <p>⚠️ <span id="doctor-warn">دوائی استعمال کرنے سے پہلے ڈاکٹر سے مشورہ کریں</span></p>
+  </div>
+
+  <!-- 📜 سکرپٹس -->
+  <script src="data.js"></script>
+  <script src="lang.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
