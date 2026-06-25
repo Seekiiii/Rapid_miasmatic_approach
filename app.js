@@ -242,9 +242,33 @@ window.onload = function() {
   document.getElementById('homePage').style.display = 'none';
   document.getElementById('aboutPage').style.display = 'block';
 }
+function showAbout() {
+  // سب کچھ چھپائیں
+  var all = document.querySelectorAll('div');
+  all.forEach(function(div) {
+    div.style.display = 'none';
+  });
+  // صرف About دکھائیں
+  document.getElementById('aboutPage').style.display = 'block';
+}
+
+function showHome() {
+  var all = document.querySelectorAll('div');
+  all.forEach(function(div) {
+    div.style.display = 'block';
+  });
+  document.getElementById('aboutPage').style.display = 'none';
+}
+function showHome() {
+  document.getElementById('aboutPage').style.display = 'none';
+  document.getElementById('homePage').style.display = 'block';
+}
+function showAbout() {
+  document.getElementById('aboutPage').style.display = 'block';
+  document.getElementById('homePage').style.display = 'none';
+}
 
 function showHome() {
   document.getElementById('aboutPage').style.display = 'none';
   document.getElementById('homePage').style.display = 'block';
 }
-
