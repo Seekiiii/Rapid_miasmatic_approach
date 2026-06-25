@@ -264,4 +264,29 @@ body {
   .main-btn {
     font-size: 14px;
   }
+}.page {
+  padding: 20px;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.btn-about {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn-back {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
 }
