@@ -144,7 +144,194 @@
     <p style="text-align:center; margin-top:30px;">
       Made with ❤️ for the Homeopathic Community
     </p>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RapidHeal - Homeopathic Remedies</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1B3A5C">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <svg class="header-logo" viewBox="0 0 100 100">
+      <path d="M50 10 L80 20 L80 50 Q80 75 50 90 Q20 75 20 50 L20 20 Z" 
+            fill="none" stroke="white" stroke-width="2"/>
+      <path d="M35 30 L35 70 L42 70 L42 55 L50 55 L58 70 L66 70 L57 53 Q65 50 65 42 Q65 30 50 30 Z M42 38 L50 38 Q57 38 57 42 Q57 48 50 48 L42 48 Z" 
+            fill="white"/>
+      <path d="M20 80 L30 80 L35 70 L40 85 L45 75 L50 80 L80 80" 
+            fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="70" cy="30" r="10" fill="#7CB342"/>
+      <rect x="67" y="25" width="6" height="10" fill="white"/>
+      <rect x="65" y="27" width="10" height="6" fill="white"/>
+    </svg>
+    <div class="header-title">Rapid<span class="green">Heal</span></div>
+    <div class="header-subtitle">میازمیٹک رپیڈ نری</div>
+    <button class="lang-toggle" onclick="toggleLang()">EN/UR</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-section active">
+      <div class="page">
+        <h2 data-en="Welcome to RapidHeal" data-ur="رپیڈنری میں خوش آمدید">Welcome to RapidHeal</h2>
+        <p data-en="Your trusted homeopathic remedy finder with miasmatic approach." 
+           data-ur="میازمیٹک نقطہ نظر کے ساتھ آپ کا قابل اعتماد ہومیوپیتھک دوائی تلاش کنندہ۔">
+          Your trusted homeopathic remedy finder with miasmatic approach.
+        </p>
+        <br>
+        <button class="btn btn-green" onclick="showPage('search')" 
+                data-en="Search Remedies" data-ur="دوائیں تلاش کریں">
+          Search Remedies
+        </button>
+      </div>
+    </div>
+
+    <!-- SEARCH PAGE -->
+    <div id="search" class="page-section">
+      <div class="page">
+        <h2 data-en="Search Remedies" data-ur="دوائیں تلاش کریں">Search Remedies</h2>
+        <input type="text" class="search-bar" id="searchInput" 
+               placeholder="Search remedy..." 
+               oninput="searchMedicine()">
+        <div id="medicineList"></div>
+      </div>
+    </div>
+
+    <!-- MIASMS PAGE -->
+    <div id="miasms" class="page-section">
+      <div class="page">
+        <h2 data-en="Miasmatic Approach" data-ur="میازمیٹک نقطہ نظر">Miasmatic Approach</h2>
+        
+        <div class="miasm-card psora" onclick="showMiasm('psora')">
+          <div class="miasm-name">Psora</div>
+          <div data-en="Itching, skin eruptions, slow recovery" 
+               data-ur="خارش، جلد پر دانے، سست بحالی">
+            Itching, skin eruptions, slow recovery
+          </div>
+        </div>
+
+        <div class="miasm-card sycosis" onclick="showMiasm('sycosis')">
+          <div class="miasm-name">Sycosis</div>
+          <div data-en="Wart-like growths, urinary issues" 
+               data-ur="مسے جیسے ڈھال، پیشاب کے مسائل">
+            Wart-like growths, urinary issues
+          </div>
+        </div>
+
+        <div class="miasm-card syphilis" onclick="showMiasm('syphilis')">
+          <div class="miasm-name">Syphilis</div>
+          <div data-en="Ulcers, destruction, night aggravation" 
+               data-ur="زخم، تباہی، رات کو بڑھنے">
+            Ulcers, destruction, night aggravation
+          </div>
+        </div>
+
+        <div class="miasm-card tuberculin" onclick="showMiasm('tuberculin')">
+          <div class="miasm-name">Tuberculin</div>
+          <div data-en="Respiratory issues, changeable symptoms" 
+               data-ur="سانس کے مسائل، بدلتے ہوئے علامات">
+            Respiratory issues, changeable symptoms
+          </div>
+        </div>
+
+        <div class="miasm-card cancer" onclick="showMiasm('cancer')">
+          <div class="miasm-name">Cancer</div>
+          <div data-en="Hard tumors, family history" 
+               data-ur="سخت گلٹیاں، خاندانی تاریخ">
+            Hard tumors, family history
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MATERIA PAGE -->
+    <div id="materia" class="page-section">
+      <div class="page">
+        <h2 data-en="Materia Medica" data-ur="میٹیریا میڈیکا">Materia Medica</h2>
+        <p data-en="Complete remedy information" 
+           data-ur="مکمل دوائی کی معلومات">
+          Complete remedy information
+        </p>
+      </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page-section">
+      <div class="page">
+        <h2 data-en="About RapidHeal" data-ur="رپیڈنری کے بارے میں">About RapidHeal</h2>
+        <p data-en="A professional homeopathic remedy finder app with miasmatic approach." 
+           data-ur="میازمیٹک نقطہ نظر کے ساتھ ایک پیشہ ور ہومیوپیتھک دوائی تلاش کنندہ ایپ۔">
+          A professional homeopathic remedy finder app with miasmatic approach.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB BAR (5 Buttons) -->
+  <div class="tab-bar">
+
+    <!-- Button 1: Home -->
+    <div class="tab-item active" onclick="showPage('home')">
+      <svg class="tab-icon" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+      </svg>
+      <div class="tab-label">Home</div>
+    </div>
+
+    <!-- Button 2: Search -->
+    <div class="tab-item" onclick="showPage('search')">
+      <svg class="tab-icon" viewBox="0 0 24 24">
+        <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 13 15.5l.27.28v.79l5 4.99L19.49 21l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+      </svg>
+      <div class="tab-label">Search</div>
+    </div>
+
+    <!-- Button 3: Miasms (Monogram) -->
+    <div class="tab-item" onclick="showPage('miasms')">
+      <svg class="tab-icon" viewBox="0 0 100 100">
+        <path d="M50 10 L80 20 L80 50 Q80 75 50 90 Q20 75 20 50 L20 20 Z" 
+              fill="none" stroke="currentColor" stroke-width="3"/>
+        <path d="M35 30 L35 70 L42 70 L42 55 L50 55 L58 70 L66 70 L57 53 Q65 50 65 42 Q65 30 50 30 Z M42 38 L50 38 Q57 38 57 42 Q57 48 50 48 L42 48 Z" 
+              fill="currentColor"/>
+        <path d="M20 80 L30 80 L35 70 L40 85 L45 75 L50 80 L80 80" 
+              fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="70" cy="30" r="10" fill="currentColor"/>
+        <rect x="67" y="25" width="6" height="10" fill="white"/>
+        <rect x="65" y="27" width="10" height="6" fill="white"/>
+      </svg>
+      <div class="tab-label">Miasms</div>
+    </div>
+
+    <!-- Button 4: Materia -->
+    <div class="tab-item" onclick="showPage('materia')">
+      <svg class="tab-icon" viewBox="0 0 24 24">
+        <path d="M19 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h11v12zM4 6H2v15c0 1.1.9 2 2 2h15v-2H4V6z" fill="currentColor"/>
+      </svg>
+      <div class="tab-label">Materia</div>
+    </div>
+
+    <!-- Button 5: About -->
+    <div class="tab-item" onclick="showPage('about')">
+      <svg class="tab-icon" viewBox="0 0 24 24">
+        <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65A.488.488 0 0 0 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.23-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="currentColor"/>
+      </svg>
+      <div class="tab-label">About</div>
+    </div>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
     <button onclick="showHome()" class="btn-back">
       ← Back to Home
     </button>
