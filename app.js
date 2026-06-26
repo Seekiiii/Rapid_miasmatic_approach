@@ -271,4 +271,78 @@ function showAbout() {
 function showHome() {
   document.getElementById('aboutPage').style.display = 'none';
   document.getElementById('homePage').style.display = 'block';
+}// ===== PAGE NAVIGATION =====
+function showPage(pageId) {
+  // Sab pages hide karo
+  document.querySelectorAll('.page-section').forEach(p => {
+    p.classList.remove('active');
+  });
+  
+  // Selected page show karo
+  document.getElementById(pageId).classList.add('active');
+  
+  // Tab bar update karo
+  document.querySelectorAll('.tab-item').forEach(t => {
+    t.classList.remove('active');
+  });
+  
+  // Active tab mark karo
+  event.currentTarget.classList.add('active');
+  
+  // Top scroll
+  window.scrollTo(0, 0);
+}
+
+// ===== SEARCH =====
+function searchMedicine() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const list = document.getElementById('medicineList');
+  
+  if (!query) {
+    list.innerHTML = '';
+    return;
+  }
+  
+  const results = medicineData.filter(m => 
+    m.name.toLowerCase().includes(query) ||
+    (m.uses && m.uses.toLowerCase().includes(query))
+  );
+  
+  if (results.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:20px;color:#757575;">No remedy found</div>';
+    return;
+  }
+  
+  list.innerHTML = results.map(m => `
+    <div class="medicine-item" onclick="showRemedy('${m.name}')">
+      <div class="medicine-name">${m.name}</div>
+      <div class="medicine-uses">${m.uses || ''}</div>
+    </div>
+  `).join('');
+}
+
+function showRemedy(name) {
+  alert('Detailed info for: ' + name);
+}
+
+// ===== LANGUAGE TOGGLE =====
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'ur' : 'en';
+  
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  
+  document.querySelectorAll('[placeholder]').forEach(el => {
+    if (el.getAttribute('data-placeholder-' + currentLang)) {
+      el.placeholder = el.getAttribute('data-placeholder-' + currentLang);
+    }
+  });
+}
+
+// ===== MIASM DETAILS =====
+function showMiasm(miasm) {
+  alert('Showing details for: ' + miasm);
 }
